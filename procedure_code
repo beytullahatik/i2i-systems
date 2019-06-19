@@ -1,0 +1,18 @@
+SET SERVEROUTPUT ON;
+DECLARE
+temp varchar2(50);
+first_name1 varchar2(50):='Beytullah';
+PROCEDURE find_university(first_name IN varchar2 , temp OUT varchar2) IS
+BEGIN
+SELECT university   
+INTO temp 
+FROM intern_information 
+WHERE first_name=temp;
+DBMS_OUTPUT.PUT_LINE(temp);
+END;
+
+BEGIN
+find_university(first_name1,temp);
+END;
+/
+
