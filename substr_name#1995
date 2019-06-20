@@ -1,0 +1,11 @@
+DECLARE
+    vs_input_name varchar(50);
+    vn_index number;
+    vs_name varchar(50);   
+BEGIN
+    vs_input_name:= 'beytullah#1995';
+    vn_index := INSTR(vs_input_name, '#');
+    SELECT SUBSTR(vs_input_name,1,vn_index-1) INTO vs_name FROM DUAL;
+    SELECT INITCAP(vs_name) INTO vs_name FROM DUAL;
+    dbms_output.put_line ('Name : ' || vs_name);
+END;
